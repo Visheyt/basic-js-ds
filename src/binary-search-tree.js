@@ -58,10 +58,10 @@ class BinarySearchTree {
     function removeElement(treeNode,data){
       if (!treeNode) return null
 
-      if (data<treeNode){
+      if (data<treeNode.data){
         treeNode.left = removeElement(treeNode.left,data)
         return treeNode
-      }else if(data>treeNode){
+      }else if(data>treeNode.data){
         treeNode.right =removeElement(treeNode.right,data)
         return treeNode
       }else{
@@ -83,8 +83,8 @@ class BinarySearchTree {
             while(maxFromLeft.right){
               maxFromLeft = maxFromLeft.right
             }
-            treeNode.value = maxFromLeft.value
-            treeNode.left = removeElement(treeNode.left,maxFromLeft.value)
+            treeNode.data = maxFromLeft.data
+            treeNode.left = removeElement(treeNode.left,maxFromLeft.data)
             return treeNode
           }
       }
